@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.7.9</version>
+		<version>2.5.7</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>io.idziksmart</groupId>
@@ -35,16 +35,22 @@
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-secretsmanager -->
+<!--		<dependency>-->
+<!--			<groupId>com.amazonaws.secretsmanager</groupId>-->
+<!--			<artifactId>aws-secretsmanager-jdbc</artifactId>-->
+<!--			<version>2.0.1</version>-->
+<!--		</dependency>-->
+		<!-- https://mvnrepository.com/artifact/com.amazonaws.secretsmanager/aws-secretsmanager-caching-java -->
 		<dependency>
-			<groupId>com.amazonaws</groupId>
-			<artifactId>aws-java-sdk-secretsmanager</artifactId>
-			<version>1.12.628</version>
+			<groupId>com.amazonaws.secretsmanager</groupId>
+			<artifactId>aws-secretsmanager-caching-java</artifactId>
+			<version>2.0.0</version>
 		</dependency>
+
 		<dependency>
-		<groupId>com.amazonaws.secretsmanager</groupId>
-		<artifactId>aws-secretsmanager-caching-java</artifactId>
-		<version>1.0.2</version>
+			<groupId>io.awspring.cloud</groupId>
+			<artifactId>spring-cloud-starter-aws-parameter-store-config</artifactId>
+			<version>2.4.4</version>
 		</dependency>
 	</dependencies>
 
