@@ -35,18 +35,11 @@
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
-<!--		<dependency>-->
-<!--			<groupId>com.amazonaws.secretsmanager</groupId>-->
-<!--			<artifactId>aws-secretsmanager-jdbc</artifactId>-->
-<!--			<version>2.0.1</version>-->
-<!--		</dependency>-->
-		<!-- https://mvnrepository.com/artifact/com.amazonaws.secretsmanager/aws-secretsmanager-caching-java -->
 		<dependency>
 			<groupId>com.amazonaws.secretsmanager</groupId>
 			<artifactId>aws-secretsmanager-caching-java</artifactId>
 			<version>2.0.0</version>
 		</dependency>
-
 		<dependency>
 			<groupId>io.awspring.cloud</groupId>
 			<artifactId>spring-cloud-starter-aws-parameter-store-config</artifactId>
