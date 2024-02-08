@@ -16,11 +16,11 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 @Configuration
 @EnableMongoRepositories
 public class MongoConfiguration extends AbstractMongoClientConfiguration {
-    @Value("${spring.data.mongodb.database}")
-    private String mongodbDatabase;
-
-    @Value("${spring.data.mongodb.uri}")
-    private String mongodbUri;
+//    @Value("${spring.data.mongodb.database}")
+//    private String mongodbDatabase;
+//
+//    @Value("${spring.data.mongodb.uri}")
+//    private String mongodbUri;
 
     @Bean
     public MongoTransactionManager transactionManager(MongoDatabaseFactory dbFactory) {
@@ -29,13 +29,15 @@ public class MongoConfiguration extends AbstractMongoClientConfiguration {
 
     @Override
     protected String getDatabaseName() {
-        return mongodbDatabase;
+        return GetParameter.getValue("/mongo/myapp/mydatabase", false);
     }
 
     @Override
     public MongoClient mongoClient() {
-        System.out.println(mongodbUri);
-        System.out.println(mongodbDatabase);
+        String mongodbUri = String.format("mongodb+srv://%s:%s@$%s",
+                GetParameter.getValue("/mongo/myapp/myuser", false),
+                GetParameter.getValue("/mongo/myapp/mypassword", true),
+                GetParameter.getValue("/mongo/myapp/myurl", false));
         return MongoClients.create(
                 MongoClientSettings.builder()
                         .applyConnectionString(new ConnectionString(mongodbUri))
